@@ -1,0 +1,1008 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TravelAgancyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ClaimType" Type="nvarchar(max)" />
+          <Property Name="ClaimValue" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogins">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" />
+          <Property Name="SecurityStamp" Type="nvarchar(max)" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="datetime" />
+          <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="Subscription" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DestinationBack">
+          <Key>
+            <PropertyRef Name="DestinationBackID" />
+          </Key>
+          <Property Name="DestinationBackID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DestinationNameB" Type="nvarchar(max)" />
+          <Property Name="TravelID" Type="int" />
+        </EntityType>
+        <EntityType Name="DestinationGo">
+          <Key>
+            <PropertyRef Name="DestinationGoID" />
+          </Key>
+          <Property Name="DestinationGoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DestinationName" Type="nvarchar(max)" />
+          <Property Name="TravelID" Type="int" />
+        </EntityType>
+        <EntityType Name="TimeBack">
+          <Key>
+            <PropertyRef Name="TimeBackID" />
+          </Key>
+          <Property Name="TimeBackID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TimeB" Type="smalldatetime" />
+          <Property Name="DestinationBackID" Type="int" />
+        </EntityType>
+        <EntityType Name="TimeGo">
+          <Key>
+            <PropertyRef Name="TimeGoID" />
+          </Key>
+          <Property Name="TimeGoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Time" Type="smalldatetime" />
+          <Property Name="DestinationGoID" Type="int" />
+        </EntityType>
+        <EntityType Name="TimeLine">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Header" Type="nvarchar(max)" />
+          <Property Name="Text" Type="nvarchar(max)" />
+          <Property Name="PostTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Travel">
+          <Key>
+            <PropertyRef Name="TravelID" />
+          </Key>
+          <Property Name="TravelID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TravelName" Type="nvarchar(max)" />
+          <Property Name="UserCreatorID" Type="nvarchar" MaxLength="128" />
+          <Property Name="NoOfSites" Type="int" />
+          <Property Name="TravelDescription" Type="nvarchar(max)" />
+          <Property Name="TravelAppointment" Type="nvarchar(max)" />
+          <Property Name="ImagePath" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Travelers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="UserID" Type="nvarchar" MaxLength="128" />
+          <Property Name="TravelID" Type="int" />
+          <Property Name="DestinationGoID" Type="int" />
+          <Property Name="DestinationBackID" Type="int" />
+          <Property Name="TimeGoID" Type="int" />
+          <Property Name="TimeBackID" Type="int" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ReferenceNo" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DestinationBack_Travel">
+          <End Role="Travel" Type="Self.Travel" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="DestinationBack" Type="Self.DestinationBack" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Travel">
+              <PropertyRef Name="TravelID" />
+            </Principal>
+            <Dependent Role="DestinationBack">
+              <PropertyRef Name="TravelID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DestinationGo_Travel">
+          <End Role="Travel" Type="Self.Travel" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="DestinationGo" Type="Self.DestinationGo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Travel">
+              <PropertyRef Name="TravelID" />
+            </Principal>
+            <Dependent Role="DestinationGo">
+              <PropertyRef Name="TravelID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TimeBack_DestinationBack">
+          <End Role="DestinationBack" Type="Self.DestinationBack" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TimeBack" Type="Self.TimeBack" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DestinationBack">
+              <PropertyRef Name="DestinationBackID" />
+            </Principal>
+            <Dependent Role="TimeBack">
+              <PropertyRef Name="DestinationBackID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TimeGo_DestinationGo">
+          <End Role="DestinationGo" Type="Self.DestinationGo" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TimeGo" Type="Self.TimeGo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DestinationGo">
+              <PropertyRef Name="DestinationGoID" />
+            </Principal>
+            <Dependent Role="TimeGo">
+              <PropertyRef Name="DestinationGoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TimeLine_AspNetUsers">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+          <End Role="TimeLine" Type="Self.TimeLine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TimeLine">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Travel_AspNetUsers">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+          <End Role="Travel" Type="Self.Travel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Travel">
+              <PropertyRef Name="UserCreatorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Travelers_AspNetUsers">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+          <End Role="Travelers" Type="Self.Travelers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Travelers">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Travelers_DestinationBack">
+          <End Role="DestinationBack" Type="Self.DestinationBack" Multiplicity="0..1" />
+          <End Role="Travelers" Type="Self.Travelers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DestinationBack">
+              <PropertyRef Name="DestinationBackID" />
+            </Principal>
+            <Dependent Role="Travelers">
+              <PropertyRef Name="DestinationBackID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Travelers_DestinationGo">
+          <End Role="DestinationGo" Type="Self.DestinationGo" Multiplicity="0..1" />
+          <End Role="Travelers" Type="Self.Travelers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DestinationGo">
+              <PropertyRef Name="DestinationGoID" />
+            </Principal>
+            <Dependent Role="Travelers">
+              <PropertyRef Name="DestinationGoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Travelers_TimeBack">
+          <End Role="TimeBack" Type="Self.TimeBack" Multiplicity="0..1" />
+          <End Role="Travelers" Type="Self.Travelers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TimeBack">
+              <PropertyRef Name="TimeBackID" />
+            </Principal>
+            <Dependent Role="Travelers">
+              <PropertyRef Name="TimeBackID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Travelers_TimeGo">
+          <End Role="TimeGo" Type="Self.TimeGo" Multiplicity="0..1" />
+          <End Role="Travelers" Type="Self.Travelers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TimeGo">
+              <PropertyRef Name="TimeGoID" />
+            </Principal>
+            <Dependent Role="Travelers">
+              <PropertyRef Name="TimeGoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Travelers_Travel">
+          <End Role="Travel" Type="Self.Travel" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Travelers" Type="Self.Travelers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Travel">
+              <PropertyRef Name="TravelID" />
+            </Principal>
+            <Dependent Role="Travelers">
+              <PropertyRef Name="TravelID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TravelAgancyModelStoreContainer">
+          <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DestinationBack" EntityType="Self.DestinationBack" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DestinationGo" EntityType="Self.DestinationGo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TimeBack" EntityType="Self.TimeBack" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TimeGo" EntityType="Self.TimeGo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TimeLine" EntityType="Self.TimeLine" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Travel" EntityType="Self.Travel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Travelers" EntityType="Self.Travelers" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DestinationBack_Travel" Association="Self.FK_DestinationBack_Travel">
+            <End Role="Travel" EntitySet="Travel" />
+            <End Role="DestinationBack" EntitySet="DestinationBack" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DestinationGo_Travel" Association="Self.FK_DestinationGo_Travel">
+            <End Role="Travel" EntitySet="Travel" />
+            <End Role="DestinationGo" EntitySet="DestinationGo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TimeBack_DestinationBack" Association="Self.FK_TimeBack_DestinationBack">
+            <End Role="DestinationBack" EntitySet="DestinationBack" />
+            <End Role="TimeBack" EntitySet="TimeBack" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TimeGo_DestinationGo" Association="Self.FK_TimeGo_DestinationGo">
+            <End Role="DestinationGo" EntitySet="DestinationGo" />
+            <End Role="TimeGo" EntitySet="TimeGo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TimeLine_AspNetUsers" Association="Self.FK_TimeLine_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="TimeLine" EntitySet="TimeLine" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Travel_AspNetUsers" Association="Self.FK_Travel_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="Travel" EntitySet="Travel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Travelers_AspNetUsers" Association="Self.FK_Travelers_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="Travelers" EntitySet="Travelers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Travelers_DestinationBack" Association="Self.FK_Travelers_DestinationBack">
+            <End Role="DestinationBack" EntitySet="DestinationBack" />
+            <End Role="Travelers" EntitySet="Travelers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Travelers_DestinationGo" Association="Self.FK_Travelers_DestinationGo">
+            <End Role="DestinationGo" EntitySet="DestinationGo" />
+            <End Role="Travelers" EntitySet="Travelers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Travelers_TimeBack" Association="Self.FK_Travelers_TimeBack">
+            <End Role="TimeBack" EntitySet="TimeBack" />
+            <End Role="Travelers" EntitySet="Travelers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Travelers_TimeGo" Association="Self.FK_Travelers_TimeGo">
+            <End Role="TimeGo" EntitySet="TimeGo" />
+            <End Role="Travelers" EntitySet="Travelers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Travelers_Travel" Association="Self.FK_Travelers_Travel">
+            <End Role="Travel" EntitySet="Travel" />
+            <End Role="Travelers" EntitySet="Travelers" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TravelAgancyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="DestinationBack">
+          <Key>
+            <PropertyRef Name="DestinationBackID" />
+          </Key>
+          <Property Name="DestinationBackID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TravelID" Type="Int32" />
+          <NavigationProperty Name="Travel" Relationship="Self.FK_DestinationBack_Travel" FromRole="DestinationBack" ToRole="Travel" />
+          <NavigationProperty Name="TimeBacks" Relationship="Self.FK_TimeBack_DestinationBack" FromRole="DestinationBack" ToRole="TimeBack" />
+          <Property Name="DestinationNameB" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Travelers" Relationship="TravelAgancyModel.FK_Travelers_DestinationBack" FromRole="DestinationBack" ToRole="Traveler" />
+        </EntityType>
+        <EntityType Name="DestinationGo">
+          <Key>
+            <PropertyRef Name="DestinationGoID" />
+          </Key>
+          <Property Name="DestinationGoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DestinationName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TravelID" Type="Int32" />
+          <NavigationProperty Name="Travel" Relationship="Self.FK_DestinationGo_Travel" FromRole="DestinationGo" ToRole="Travel" />
+          <NavigationProperty Name="TimeGoes" Relationship="Self.FK_TimeGo_DestinationGo" FromRole="DestinationGo" ToRole="TimeGo" />
+          <NavigationProperty Name="Travelers" Relationship="TravelAgancyModel.FK_Travelers_DestinationGo" FromRole="DestinationGo" ToRole="Traveler" />
+        </EntityType>
+        <EntityType Name="TimeBack">
+          <Key>
+            <PropertyRef Name="TimeBackID" />
+          </Key>
+          <Property Name="TimeBackID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DestinationBackID" Type="Int32" />
+          <NavigationProperty Name="DestinationBack" Relationship="Self.FK_TimeBack_DestinationBack" FromRole="TimeBack" ToRole="DestinationBack" />
+          <Property Name="TimeB" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Travelers" Relationship="TravelAgancyModel.FK_Travelers_TimeBack" FromRole="TimeBack" ToRole="Traveler" />
+        </EntityType>
+        <EntityType Name="TimeGo">
+          <Key>
+            <PropertyRef Name="TimeGoID" />
+          </Key>
+          <Property Name="TimeGoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Time" Type="DateTime" Precision="0" />
+          <Property Name="DestinationGoID" Type="Int32" />
+          <NavigationProperty Name="DestinationGo" Relationship="Self.FK_TimeGo_DestinationGo" FromRole="TimeGo" ToRole="DestinationGo" />
+          <NavigationProperty Name="Travelers" Relationship="TravelAgancyModel.FK_Travelers_TimeGo" FromRole="TimeGo" ToRole="Traveler" />
+        </EntityType>
+        <EntityType Name="Travel">
+          <Key>
+            <PropertyRef Name="TravelID" />
+          </Key>
+          <Property Name="TravelID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TravelName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DestinationBacks" Relationship="Self.FK_DestinationBack_Travel" FromRole="Travel" ToRole="DestinationBack" />
+          <NavigationProperty Name="DestinationGoes" Relationship="Self.FK_DestinationGo_Travel" FromRole="Travel" ToRole="DestinationGo" />
+          <Property Name="UserCreatorID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="NoOfSites" Type="Int32" />
+          <NavigationProperty Name="AspNetUser" Relationship="TravelAgancyModel.FK_Travel_AspNetUsers" FromRole="Travel" ToRole="AspNetUser" />
+          <Property Name="TravelDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TravelAppointment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ImagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Travelers" Relationship="TravelAgancyModel.FK_Travelers_Travel" FromRole="Travel" ToRole="Traveler" />
+        </EntityType>
+        <Association Name="FK_DestinationBack_Travel">
+          <End Role="Travel" Type="Self.Travel" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="DestinationBack" Type="Self.DestinationBack" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Travel">
+              <PropertyRef Name="TravelID" />
+            </Principal>
+            <Dependent Role="DestinationBack">
+              <PropertyRef Name="TravelID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TimeBack_DestinationBack">
+          <End Role="DestinationBack" Type="Self.DestinationBack" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TimeBack" Type="Self.TimeBack" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DestinationBack">
+              <PropertyRef Name="DestinationBackID" />
+            </Principal>
+            <Dependent Role="TimeBack">
+              <PropertyRef Name="DestinationBackID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DestinationGo_Travel">
+          <End Role="Travel" Type="Self.Travel" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="DestinationGo" Type="Self.DestinationGo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Travel">
+              <PropertyRef Name="TravelID" />
+            </Principal>
+            <Dependent Role="DestinationGo">
+              <PropertyRef Name="TravelID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TimeGo_DestinationGo">
+          <End Role="DestinationGo" Type="Self.DestinationGo" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TimeGo" Type="Self.TimeGo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DestinationGo">
+              <PropertyRef Name="DestinationGoID" />
+            </Principal>
+            <Dependent Role="TimeGo">
+              <PropertyRef Name="DestinationGoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TravelAgancyEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DestinationBacks" EntityType="Self.DestinationBack" />
+          <EntitySet Name="DestinationGoes" EntityType="Self.DestinationGo" />
+          <EntitySet Name="TimeBacks" EntityType="Self.TimeBack" />
+          <EntitySet Name="TimeGoes" EntityType="Self.TimeGo" />
+          <EntitySet Name="Travels" EntityType="Self.Travel" />
+          <AssociationSet Name="FK_DestinationBack_Travel" Association="Self.FK_DestinationBack_Travel">
+            <End Role="Travel" EntitySet="Travels" />
+            <End Role="DestinationBack" EntitySet="DestinationBacks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TimeBack_DestinationBack" Association="Self.FK_TimeBack_DestinationBack">
+            <End Role="DestinationBack" EntitySet="DestinationBacks" />
+            <End Role="TimeBack" EntitySet="TimeBacks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DestinationGo_Travel" Association="Self.FK_DestinationGo_Travel">
+            <End Role="Travel" EntitySet="Travels" />
+            <End Role="DestinationGo" EntitySet="DestinationGoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TimeGo_DestinationGo" Association="Self.FK_TimeGo_DestinationGo">
+            <End Role="DestinationGo" EntitySet="DestinationGoes" />
+            <End Role="TimeGo" EntitySet="TimeGoes" />
+          </AssociationSet>
+          <EntitySet Name="C__MigrationHistory" EntityType="TravelAgancyModel.C__MigrationHistory" />
+          <EntitySet Name="AspNetRoles" EntityType="TravelAgancyModel.AspNetRole" />
+          <EntitySet Name="AspNetUserClaims" EntityType="TravelAgancyModel.AspNetUserClaim" />
+          <EntitySet Name="AspNetUserLogins" EntityType="TravelAgancyModel.AspNetUserLogin" />
+          <EntitySet Name="AspNetUsers" EntityType="TravelAgancyModel.AspNetUser" />
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="TravelAgancyModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUser" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaim" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="TravelAgancyModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUser" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogin" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Travel_AspNetUsers" Association="TravelAgancyModel.FK_Travel_AspNetUsers">
+            <End Role="AspNetUser" EntitySet="AspNetUsers" />
+            <End Role="Travel" EntitySet="Travels" />
+          </AssociationSet>
+          <AssociationSet Name="AspNetUserRoles" Association="TravelAgancyModel.AspNetUserRoles">
+            <End Role="AspNetRole" EntitySet="AspNetRoles" />
+            <End Role="AspNetUser" EntitySet="AspNetUsers" />
+          </AssociationSet>
+          <EntitySet Name="Travelers" EntityType="TravelAgancyModel.Traveler" />
+          <AssociationSet Name="FK_Travelers_AspNetUsers" Association="TravelAgancyModel.FK_Travelers_AspNetUsers">
+            <End Role="AspNetUser" EntitySet="AspNetUsers" />
+            <End Role="Traveler" EntitySet="Travelers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Travelers_DestinationBack" Association="TravelAgancyModel.FK_Travelers_DestinationBack">
+            <End Role="DestinationBack" EntitySet="DestinationBacks" />
+            <End Role="Traveler" EntitySet="Travelers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Travelers_DestinationGo" Association="TravelAgancyModel.FK_Travelers_DestinationGo">
+            <End Role="DestinationGo" EntitySet="DestinationGoes" />
+            <End Role="Traveler" EntitySet="Travelers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Travelers_TimeBack" Association="TravelAgancyModel.FK_Travelers_TimeBack">
+            <End Role="TimeBack" EntitySet="TimeBacks" />
+            <End Role="Traveler" EntitySet="Travelers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Travelers_TimeGo" Association="TravelAgancyModel.FK_Travelers_TimeGo">
+            <End Role="TimeGo" EntitySet="TimeGoes" />
+            <End Role="Traveler" EntitySet="Travelers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Travelers_Travel" Association="TravelAgancyModel.FK_Travelers_Travel">
+            <End Role="Travel" EntitySet="Travels" />
+            <End Role="Traveler" EntitySet="Travelers" />
+          </AssociationSet>
+          <EntitySet Name="TimeLines" EntityType="TravelAgancyModel.TimeLine" />
+          <AssociationSet Name="FK_TimeLine_AspNetUsers" Association="TravelAgancyModel.FK_TimeLine_AspNetUsers">
+            <End Role="AspNetUser" EntitySet="AspNetUsers" />
+            <End Role="TimeLine" EntitySet="TimeLines" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="C__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ContextKey" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Model" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="ProductVersion" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AspNetRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUsers" Relationship="TravelAgancyModel.AspNetUserRoles" FromRole="AspNetRole" ToRole="AspNetUser" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaim">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUser" Relationship="TravelAgancyModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaim" ToRole="AspNetUser" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogin">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="ProviderKey" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUser" Relationship="TravelAgancyModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogin" ToRole="AspNetUser" />
+        </EntityType>
+        <EntityType Name="AspNetUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+          <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUserClaims" Relationship="TravelAgancyModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUser" ToRole="AspNetUserClaim" />
+          <NavigationProperty Name="AspNetUserLogins" Relationship="TravelAgancyModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUser" ToRole="AspNetUserLogin" />
+          <NavigationProperty Name="Travels" Relationship="TravelAgancyModel.FK_Travel_AspNetUsers" FromRole="AspNetUser" ToRole="Travel" />
+          <NavigationProperty Name="AspNetRoles" Relationship="TravelAgancyModel.AspNetUserRoles" FromRole="AspNetUser" ToRole="AspNetRole" />
+          <Property Name="Subscription" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Travelers" Relationship="TravelAgancyModel.FK_Travelers_AspNetUsers" FromRole="AspNetUser" ToRole="Traveler" />
+          <NavigationProperty Name="TimeLines" Relationship="TravelAgancyModel.FK_TimeLine_AspNetUsers" FromRole="AspNetUser" ToRole="TimeLine" />
+        </EntityType>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Type="TravelAgancyModel.AspNetUser" Role="AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="TravelAgancyModel.AspNetUserClaim" Role="AspNetUserClaim" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaim">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Type="TravelAgancyModel.AspNetUser" Role="AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="TravelAgancyModel.AspNetUserLogin" Role="AspNetUserLogin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogin">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Travel_AspNetUsers">
+          <End Type="TravelAgancyModel.AspNetUser" Role="AspNetUser" Multiplicity="0..1" />
+          <End Type="TravelAgancyModel.Travel" Role="Travel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Travel">
+              <PropertyRef Name="UserCreatorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspNetUserRoles">
+          <End Type="TravelAgancyModel.AspNetRole" Role="AspNetRole" Multiplicity="*" />
+          <End Type="TravelAgancyModel.AspNetUser" Role="AspNetUser" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Traveler">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="UserID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="TravelID" Type="Int32" />
+          <Property Name="DestinationGoID" Type="Int32" />
+          <Property Name="DestinationBackID" Type="Int32" />
+          <Property Name="TimeGoID" Type="Int32" />
+          <Property Name="TimeBackID" Type="Int32" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="AspNetUser" Relationship="TravelAgancyModel.FK_Travelers_AspNetUsers" FromRole="Traveler" ToRole="AspNetUser" />
+          <NavigationProperty Name="DestinationBack" Relationship="TravelAgancyModel.FK_Travelers_DestinationBack" FromRole="Traveler" ToRole="DestinationBack" />
+          <NavigationProperty Name="DestinationGo" Relationship="TravelAgancyModel.FK_Travelers_DestinationGo" FromRole="Traveler" ToRole="DestinationGo" />
+          <NavigationProperty Name="TimeBack" Relationship="TravelAgancyModel.FK_Travelers_TimeBack" FromRole="Traveler" ToRole="TimeBack" />
+          <NavigationProperty Name="TimeGo" Relationship="TravelAgancyModel.FK_Travelers_TimeGo" FromRole="Traveler" ToRole="TimeGo" />
+          <NavigationProperty Name="Travel" Relationship="TravelAgancyModel.FK_Travelers_Travel" FromRole="Traveler" ToRole="Travel" />
+          <Property Name="ReferenceNo" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_Travelers_AspNetUsers">
+          <End Type="TravelAgancyModel.AspNetUser" Role="AspNetUser" Multiplicity="0..1" />
+          <End Type="TravelAgancyModel.Traveler" Role="Traveler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Traveler">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Travelers_DestinationBack">
+          <End Type="TravelAgancyModel.DestinationBack" Role="DestinationBack" Multiplicity="0..1" />
+          <End Type="TravelAgancyModel.Traveler" Role="Traveler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DestinationBack">
+              <PropertyRef Name="DestinationBackID" />
+            </Principal>
+            <Dependent Role="Traveler">
+              <PropertyRef Name="DestinationBackID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Travelers_DestinationGo">
+          <End Type="TravelAgancyModel.DestinationGo" Role="DestinationGo" Multiplicity="0..1" />
+          <End Type="TravelAgancyModel.Traveler" Role="Traveler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DestinationGo">
+              <PropertyRef Name="DestinationGoID" />
+            </Principal>
+            <Dependent Role="Traveler">
+              <PropertyRef Name="DestinationGoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Travelers_TimeBack">
+          <End Type="TravelAgancyModel.TimeBack" Role="TimeBack" Multiplicity="0..1" />
+          <End Type="TravelAgancyModel.Traveler" Role="Traveler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TimeBack">
+              <PropertyRef Name="TimeBackID" />
+            </Principal>
+            <Dependent Role="Traveler">
+              <PropertyRef Name="TimeBackID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Travelers_TimeGo">
+          <End Type="TravelAgancyModel.TimeGo" Role="TimeGo" Multiplicity="0..1" />
+          <End Type="TravelAgancyModel.Traveler" Role="Traveler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TimeGo">
+              <PropertyRef Name="TimeGoID" />
+            </Principal>
+            <Dependent Role="Traveler">
+              <PropertyRef Name="TimeGoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Travelers_Travel">
+          <End Type="TravelAgancyModel.Travel" Role="Travel" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="TravelAgancyModel.Traveler" Role="Traveler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Travel">
+              <PropertyRef Name="TravelID" />
+            </Principal>
+            <Dependent Role="Traveler">
+              <PropertyRef Name="TravelID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TimeLine">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Header" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUser" Relationship="TravelAgancyModel.FK_TimeLine_AspNetUsers" FromRole="TimeLine" ToRole="AspNetUser" />
+          <Property Name="PostTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <Association Name="FK_TimeLine_AspNetUsers">
+          <End Type="TravelAgancyModel.AspNetUser" Role="AspNetUser" Multiplicity="1" />
+          <End Type="TravelAgancyModel.TimeLine" Role="TimeLine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TimeLine">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TravelAgancyModelStoreContainer" CdmEntityContainer="TravelAgancyEntities">
+          <EntitySetMapping Name="DestinationBacks">
+            <EntityTypeMapping TypeName="TravelAgancyModel.DestinationBack">
+              <MappingFragment StoreEntitySet="DestinationBack">
+                <ScalarProperty Name="DestinationNameB" ColumnName="DestinationNameB" />
+                <ScalarProperty Name="DestinationBackID" ColumnName="DestinationBackID" />
+                <ScalarProperty Name="TravelID" ColumnName="TravelID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DestinationGoes">
+            <EntityTypeMapping TypeName="TravelAgancyModel.DestinationGo">
+              <MappingFragment StoreEntitySet="DestinationGo">
+                <ScalarProperty Name="DestinationGoID" ColumnName="DestinationGoID" />
+                <ScalarProperty Name="DestinationName" ColumnName="DestinationName" />
+                <ScalarProperty Name="TravelID" ColumnName="TravelID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TimeBacks">
+            <EntityTypeMapping TypeName="TravelAgancyModel.TimeBack">
+              <MappingFragment StoreEntitySet="TimeBack">
+                <ScalarProperty Name="TimeB" ColumnName="TimeB" />
+                <ScalarProperty Name="TimeBackID" ColumnName="TimeBackID" />
+                <ScalarProperty Name="DestinationBackID" ColumnName="DestinationBackID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TimeGoes">
+            <EntityTypeMapping TypeName="TravelAgancyModel.TimeGo">
+              <MappingFragment StoreEntitySet="TimeGo">
+                <ScalarProperty Name="TimeGoID" ColumnName="TimeGoID" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="DestinationGoID" ColumnName="DestinationGoID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Travels">
+            <EntityTypeMapping TypeName="TravelAgancyModel.Travel">
+              <MappingFragment StoreEntitySet="Travel">
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+                <ScalarProperty Name="TravelAppointment" ColumnName="TravelAppointment" />
+                <ScalarProperty Name="TravelDescription" ColumnName="TravelDescription" />
+                <ScalarProperty Name="NoOfSites" ColumnName="NoOfSites" />
+                <ScalarProperty Name="UserCreatorID" ColumnName="UserCreatorID" />
+                <ScalarProperty Name="TravelID" ColumnName="TravelID" />
+                <ScalarProperty Name="TravelName" ColumnName="TravelName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="C__MigrationHistory">
+            <EntityTypeMapping TypeName="TravelAgancyModel.C__MigrationHistory">
+              <MappingFragment StoreEntitySet="__MigrationHistory">
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetRoles">
+            <EntityTypeMapping TypeName="TravelAgancyModel.AspNetRole">
+              <MappingFragment StoreEntitySet="AspNetRoles">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserClaims">
+            <EntityTypeMapping TypeName="TravelAgancyModel.AspNetUserClaim">
+              <MappingFragment StoreEntitySet="AspNetUserClaims">
+                <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+                <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserLogins">
+            <EntityTypeMapping TypeName="TravelAgancyModel.AspNetUserLogin">
+              <MappingFragment StoreEntitySet="AspNetUserLogins">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+                <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUsers">
+            <EntityTypeMapping TypeName="TravelAgancyModel.AspNetUser">
+              <MappingFragment StoreEntitySet="AspNetUsers">
+                <ScalarProperty Name="Subscription" ColumnName="Subscription" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="AspNetUserRoles" TypeName="TravelAgancyModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+            <EndProperty Name="AspNetUser">
+              <ScalarProperty Name="Id" ColumnName="UserId" />
+            </EndProperty>
+            <EndProperty Name="AspNetRole">
+              <ScalarProperty Name="Id" ColumnName="RoleId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="Travelers">
+            <EntityTypeMapping TypeName="TravelAgancyModel.Traveler">
+              <MappingFragment StoreEntitySet="Travelers">
+                <ScalarProperty Name="ReferenceNo" ColumnName="ReferenceNo" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="TimeBackID" ColumnName="TimeBackID" />
+                <ScalarProperty Name="TimeGoID" ColumnName="TimeGoID" />
+                <ScalarProperty Name="DestinationBackID" ColumnName="DestinationBackID" />
+                <ScalarProperty Name="DestinationGoID" ColumnName="DestinationGoID" />
+                <ScalarProperty Name="TravelID" ColumnName="TravelID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TimeLines">
+            <EntityTypeMapping TypeName="TravelAgancyModel.TimeLine">
+              <MappingFragment StoreEntitySet="TimeLine">
+                <ScalarProperty Name="PostTime" ColumnName="PostTime" />
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="Header" ColumnName="Header" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
