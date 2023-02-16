@@ -10,7 +10,7 @@
   <a href="https://github.com/JoeGitHubPro/TravelAgancyPro](https://github.com/JoeGitHubPro/TravelAgancyPro)" target="_blank">
     <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
   </a>
-  <a href="https://github.com/kefranabg/readme-md-generator/blob/master/LICENSE" target="_blank">
+  <a href="https://github.com/JoeGitHubPro/TravelAgancyPro" target="_blank">
     <img alt="License: ASP.Net" src="https://img.shields.io/github/license/JoeGitHubPro/TravelAgancyPro" />
   </a>
 </p>
@@ -30,7 +30,7 @@ Click button to get Decomntation sheet or vist home page after deploy
 
 </div>
 
-[KBD]: [Types/KBD.md](https://github.com/JoeGitHubPro/MasterDegree/blob/master/MasterDegreeAPIDecomntation.xlsx)
+[KBD]: [Types/KBD.md](https://github.com/JoeGitHubPro/TravelAgancyPro/blob/master/API.xlsx)
 
 
 ## Prerequisites
