@@ -30,7 +30,7 @@ Click button to get Decomntation sheet or vist home page after deploy
 
 </div>
 
-[KBD]: [Types/KBD.md](https://github.com/JoeGitHubPro/TravelAgancyPro/raw/master/API.xlsx)
+[KBD]: [https://github.com/JoeGitHubPro/TravelAgancyPro/raw/master/API.xlsx](https://github.com/JoeGitHubPro/TravelAgancyPro/raw/master/API.xlsx)
 
 
 ## Prerequisites
