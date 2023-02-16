@@ -7,17 +7,17 @@
   <a href="https://github.com/JoeGitHubPro/MasterDegree/blob/master/MasterDegreeAPIDecomntation.xlsx" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
-  <a href="https://github.com/kefranabg/readme-md-generator/graphs/commit-activity" target="_blank">
+  <a href="https://github.com/kefranabg/readme-md-generator/graphs/commit-activity](https://github.com/JoeGitHubPro/TravelAgancyPro)" target="_blank">
     <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
   </a>
   <a href="https://github.com/kefranabg/readme-md-generator/blob/master/LICENSE" target="_blank">
-    <img alt="License: ASP.Net" src="https://img.shields.io/github/license/JoeGitHubPro/MasterDegree" />
+    <img alt="License: ASP.Net" src="https://img.shields.io/github/license/JoeGitHubPro/TravelAgancyPro" />
   </a>
 </p>
 
 > The Travel Agency application is used in order to facilitate and streamline the way in which passengers book their bus seats
 
-### 🏠 [Homepage](https://github.com/JoeGitHubPro/MasterDegree)
+### 🏠 [Homepage](https://github.com/JoeGitHubPro/TravelAgancyPro)
 ## Documentation
 
 <div>
