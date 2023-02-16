@@ -42,7 +42,7 @@ Click button to get Decomntation sheet or vist home page after deploy
 ## Deploy DataBase
 
 ```sh
-Run SQL file at this location [https://github.com/JoeGitHubPro/TravelAgancyPro/blob/master/TravelAgancyPro/Web.config] on database server
+Run SQL file at this location [https://github.com/JoeGitHubPro/TravelAgancyPro/blob/master/TravelAgancySQLQuery.sql] on database server
 ```
 
 ## Deploy
