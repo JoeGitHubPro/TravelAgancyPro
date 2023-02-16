@@ -17,30 +17,43 @@
 
 > The Travel Agency application is used in order to
 
-### 🏠 [Homepage](through a central marketplace within the app)
+### 🏠 [Homepage](https://github.com/JoeGitHubPro/MasterDegree)
 
 ## Prerequisites
 
-- npm >=5.5.0
-- node >=9.3.0
+- windows OS 
+- .Net Framework 
+- SQL Server
 
-## Install
-
-```sh
-npm install
-```
-
-## Usage
+## Deploy DataBase
 
 ```sh
-npm run start
+Run SQL file at this location [https://github.com/JoeGitHubPro/MasterDegree/blob/master/MasterDegreeDBSQLQuery.sql] on database server
 ```
 
-## Run tests
+## Deploy
 
 ```sh
-npm run test
+Go to  Web.config file , then change connectionStrings 
+1- put database server name in "Data Source" 
+2- put database name in "Initial Catalog"
+3- put server site username in "User Id"
+4- put server site password in "password"
+
+do those steps twice for "DefaultConnection" and "MasterDegreeEntities1"
 ```
+
+
+
+## Web.config edition part
+
+```sh
+
+<add name="DefaultConnection" connectionString="Data Source=database server name;Initial Catalog=database name ;User Id=username;Password= password" providerName="System.Data.SqlClient" />
+	  <add name="TravelAgancyEntities" connectionString="metadata=res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl;provider=System.Data.SqlClient;provider connection string=&quot;data Source=database server name;Initial Catalog=database name ;User Id=username;Password= password;MultipleActiveResultSets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+	
+```
+
 
 ## Author
 
