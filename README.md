@@ -15,7 +15,7 @@
   </a>
 </p>
 
-> This is API application using .net framwork
+> The Travel Agency application is used in order to facilitate and streamline the way in which passengers book their bus seats
 
 ### 🏠 [Homepage](https://github.com/JoeGitHubPro/MasterDegree)
 ## Documentation
