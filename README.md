@@ -15,7 +15,7 @@
   </a>
 </p>
 
-> The Travel Agency application is used in order to
+> This is API application using .net framwork
 
 ### 🏠 [Homepage](https://github.com/JoeGitHubPro/MasterDegree)
 ## Documentation
