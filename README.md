@@ -28,7 +28,7 @@
 ## Deploy DataBase
 
 ```sh
-Run SQL file at this location [https://github.com/JoeGitHubPro/MasterDegree/blob/master/MasterDegreeDBSQLQuery.sql] on database server
+Run SQL file at this location [https://github.com/JoeGitHubPro/TravelAgancyPro/blob/master/TravelAgancyPro/Web.config] on database server
 ```
 
 ## Deploy
