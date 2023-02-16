@@ -88,4 +88,4 @@ Give a ⭐️ if this project helped you!
 ## 📝 License
 
 Copyright © 2023 [Youssef Mohamed Ali](https://github.com/JoeGitHubPro).<br />
-This project is [ASP.Net](https://github.com/JoeGitHubPro) licensed.
+This project is [ASP.Net](ASP.Net) licensed.
