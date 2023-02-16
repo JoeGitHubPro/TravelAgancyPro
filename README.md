@@ -54,7 +54,7 @@ Go to  Web.config file , then change connectionStrings
 3- put server site username in "User Id"
 4- put server site password in "password"
 
-do those steps twice for "DefaultConnection" and "MasterDegreeEntities1"
+do those steps twice for "DefaultConnection" and "TravelAgancyEntities"
 ```
 
 
